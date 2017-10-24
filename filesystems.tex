@@ -1,0 +1,27 @@
+\documentclass{lug}
+
+\usepackage{fontawesome}
+\usepackage{etoolbox}
+\usepackage{etoolbox}
+\usepackage{textcomp}
+\usepackage[nodisplayskipstretch]{setspace}
+\usepackage{xspace}
+
+\AtBeginEnvironment{minted}{\singlespacing\fontsize{10}{10}\selectfont}
+
+\makeatletter
+\patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip0.5em}{}{}
+\makeatother
+
+\title{Filesystems}
+\author{Sumner Evans and Sam Sartor}
+\institute{Mines Linux Users Group}
+
+\begin{document}
+
+\begin{frame}[standout]
+    \Huge
+    Questions?
+\end{frame}
+
+\end{document}
