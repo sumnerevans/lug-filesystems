@@ -1,2 +1,6 @@
 # lug-filesystems
-A talk about filesystems. By Sumner and Sam.
+A LUG talk about filesystems.
+
+## Authors/Presenters
+- [Sumner Evans](https://github.com/sumnerevans)
+- [Sam Sartor](https://github.com/samsartor)
