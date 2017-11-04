@@ -15,4 +15,5 @@ compile:
 	$(LATEX_COMPILER) $(OUTPUT_FILE).tex
 
 clean:
-	rm $(OUTPUT_FILE).nav $(OUTPUT_FILE).snm $(OUTPUT_FILE).toc
+	rm -f $(OUTPUT_FILE).aux $(OUTPUT_FILE).log $(OUTPUT_FILE).nav
+	rm -f $(OUTPUT_FILE).out $(OUTPUT_FILE).snm $(OUTPUT_FILE).toc
