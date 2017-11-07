@@ -1,10 +1,20 @@
 # Outline
-- What are filesystems?
-- What are they responsible for?
-- History of Filesystems
+- What are filesystems?                 (Sumner)
+- What are they responsible for?        (Sumner)
+- History of Filesystems                (Sumner)
 - Current Filesystems
-  - FAT32                       (flash drives and stuff)
-  - NTFS                        (Windows)
-  - HFS+ & APFS                 (macOS)
-  - ext4, Btrfs, ZFS, XFS       (Linux)
-  - TFS                         (Redox)
+  - Linux Filesystems
+    - ext4                              (Sam)
+  - Windows/macOS Filesystems
+    - NTFS                              (Sam)
+    - HFS+ & APFS                       (Sumner)
+  - Flash Drives
+    - FAT32                             (Sam)
+  - Alternative Filesystems
+    - Btrfs                             (Sumner)
+    - XFS                               (Sumner)
+    - ZFS                               (Sam)
+    - TFS                               (Sam)
+  - Virtual Filesystems
+    - tmpfs                             (Sumner)
+    - sshfs                             (Sam)
