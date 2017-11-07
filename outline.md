@@ -23,3 +23,8 @@
   - /etc/fstab                          (Sumner)
   - mkfs                                (Sumner)
   - Fragmentation, why it's bad for SSD (Sam)
+
+## Possible other topics:
+- etx2-4 evolution
+- journalling
+- overlayfs
