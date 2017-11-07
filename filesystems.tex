@@ -23,13 +23,34 @@
 
 \begin{frame}{What are Filesystems?}
     \begin{itemize}
-        \item Filesystems manage the storage and retrieval of files
+        \item Filesystems manage the storage and retrieval of files from storage
+            media.
         \item Filesystems are an abstraction layer between storage media (SSDs,
-            HDDs, disk drives, even tape drives)
+            HDDs, disk drives, even tape drives).
+        \item Filesystems exist on \textit{partitions}, physically contiguous
+            segments of the disk.
     \end{itemize}
 \end{frame}
 
 \begin{frame}{Filesystems are Responsible for\ldots}
+    \begin{itemize}
+        \item \textbf{Space management:} filesystems allocate and manage space
+            in discrete chunks. Filesystems must keep track of what data is
+            stored at each chunk.
+        \item \textbf{Filenames:} identify a storage location in the file
+            system. Can be case sensitive (ext4) or case insensitive (HFS,
+            NTFS).
+        \item \textbf{Directories (folders):} group files into separate
+            collections. Modern filesystems allow arbitrary nesting of
+            directories.
+        \item \textbf{Metadata:} filesystems store book-keeping information
+            about their contents (e.g. file sizes, last accessed date, owner and
+            permissions, etc.).
+        \item \textbf{Access Control:} prevent unauthorized access to files on
+            disk.
+        \item \textbf{Data Integrity:} filesystems must be resilient to failure,
+            some are better at this than others.
+    \end{itemize}
 \end{frame}
 
 \section{History of Filesystems}
@@ -39,6 +60,13 @@
 \begin{frame}[standout]
     \Huge
     Questions?
+\end{frame}
+
+\begin{frame}{References}
+    \begin{itemize}
+        \item \url{https://en.wikipedia.org/wiki/File_system}
+        \item \url{http://www.tldp.org/LDP/sag/html/filesystems.html}
+    \end{itemize}
 \end{frame}
 
 \end{document}

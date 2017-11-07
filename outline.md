@@ -7,7 +7,7 @@
     - ext4                              (Sam)
   - Windows/macOS Filesystems
     - NTFS                              (Sam)
-    - HFS+ & APFS                       (Sumner)
+    - HFS, HFS+ & APFS                  (Sumner)
   - Flash Drives
     - FAT32                             (Sam)
   - Alternative Filesystems
@@ -17,4 +17,9 @@
     - TFS                               (Sam)
   - Virtual Filesystems
     - tmpfs                             (Sumner)
+    - proc filesystem                   (Sumner)
     - sshfs                             (Sam)
+- Configuration/maintenance
+  - /etc/fstab                          (Sumner)
+  - mkfs                                (Sumner)
+  - Fragmentation, why it's bad for SSD (Sam)
