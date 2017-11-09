@@ -88,8 +88,27 @@
 \begin{frame}{TFS}
 \end{frame}
 
+\section{Network Filesystems}
+\begin{frame}{What is a network filesystem?}
+\begin{center}
+    You can access remote storage devices over the internet using a
+    \emph{network filesystem}.
+\end{center}
+\end{frame}
+
+\begin{frame}{NFS}
+\end{frame}
+
+\begin{frame}{Samba}
+\end{frame}
+
 \section{Virtual Filesystems}
 \begin{frame}{What is a virtual filesystem?}
+\begin{center}
+    There is no reason why a filesystem needs to be backed by a real partition
+    on a real storage device. The exist plenty of \emph{virtual filesystems}
+    that are purely procedural or abstract other kinds of devices.
+\end{center}
 \end{frame}
 
 \begin{frame}{tmpfs}
@@ -98,10 +117,21 @@
 \begin{frame}{proc filesystem}
 \end{frame}
 
-\begin{frame}{sshfs}
+\begin{frame}{FUSE}
+\begin{itemize}
+    \item Filesystem in Userspace (FUSE) is an interface for creating
+    filesystems without writing any kernel-level code
+    \item Available in Linux, FreeBSD, OpenBSD, NetBSD, OpenSolaris, Minix 3,
+    Android, and macOS
+    \item Access through libfuse for C (bindings exist for Python, Rust, etc.)
+\end{itemize}
 \end{frame}
 
-\begin{frame}{FUSE}
+\begin{frame}{sshfs}
+\begin{itemize}
+    \item Implemented using FUSE
+    \item Mount a directory on a remote system through SSH
+\end{itemize}
 \end{frame}
 
 \section{Configuration/maintenance}

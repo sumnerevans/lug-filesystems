@@ -15,6 +15,9 @@
     - XFS                               (Sumner)
     - ZFS                               (Sam)
     - TFS                               (Sam)
+  - Network Filesystems
+    - NFS                               (Sam)
+    - Samba                             (Sam)
   - Virtual Filesystems
     - tmpfs                             (Sumner)
     - proc filesystem                   (Sumner)
