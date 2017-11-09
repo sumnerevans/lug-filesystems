@@ -19,6 +19,7 @@
     - tmpfs                             (Sumner)
     - proc filesystem                   (Sumner)
     - sshfs                             (Sam)
+    - FUSE / libfuse                    (Sam)
 - Configuration/maintenance
   - /etc/fstab                          (Sumner)
   - mkfs                                (Sumner)
