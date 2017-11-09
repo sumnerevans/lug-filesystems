@@ -13,6 +13,18 @@
 \patchcmd{\beamer@sectionintoc}{\vskip1.5em}{\vskip0.5em}{}{}
 \makeatother
 
+\newcommand{\pmidg}[1]{\parbox{\widthof{#1}}{#1}}
+\newcommand{\splitslide}[4]{
+    \noindent
+    \begin{minipage}{#1 \textwidth - #2 }
+        #3
+    \end{minipage}%
+    \hspace{ \dimexpr #2 * 2 \relax }%
+    \begin{minipage}{\textwidth - #1 \textwidth - #2 }
+        #4
+    \end{minipage}
+}
+
 \title{Filesystems}
 \author{Sumner Evans and Sam Sartor}
 \institute{Mines Linux Users Group}
@@ -54,6 +66,15 @@
 \end{frame}
 
 \section{History of Filesystems}
+\begin{frame}{The First Filesystems}
+    \splitslide{0.60}{1em}{
+    The filesystem was originally thought of as part of the operating system.
+
+    One of the first filesystems that had a name was DECTape. DECTape stored an
+    astoundingly small 184 kilobytes (kilo, not mega) of data per tape on the
+    PDP-8.
+    }{\includegraphics[width=0.4\textheight]{./graphics/dectape.jpg}}
+\end{frame}
 
 \section{Current Filesystems}
 
@@ -148,6 +169,7 @@
     \begin{itemize}
         \item \url{https://en.wikipedia.org/wiki/File_system}
         \item \url{http://www.tldp.org/LDP/sag/html/filesystems.html}
+        \item \url{https://arstechnica.com/gadgets/2008/03/past-present-future-file-systems/2/}
     \end{itemize}
 \end{frame}
 
