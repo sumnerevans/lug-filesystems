@@ -163,7 +163,42 @@
 
 \section{Flashdrives}
 \begin{frame}{FAT32}
+    \texttt{FAT} is an ancient family of filesystems, going back to floppy disks
+    in 1977. \texttt{FAT32} allows for largish files (up to 4GiB) and storage
+    devices. It is mainly used on portable storage devices such as flash drives.
+
+    \textbf{Pros}
+    \begin{itemize}
+        \item Works anywhere
+        \item Works on anything
+    \end{itemize}
+
+    \textbf{Cons}
+    \begin{itemize}
+        \item Annoying size limitations
+        \item Very inflexible
+    \end{itemize}
 \end{frame}
+
+\begin{frame}{exFAT}
+    \texttt{exFAT} is the latest variation of the \texttt{FAT} family. Although
+    it is far from being fully featured, it is a significant improvement on
+    \texttt{FAT32}.
+
+    \textbf{Pros}
+    \begin{itemize}
+        \item Newer
+        \item Supports larger files size
+        \item Supports larger storage devices
+    \end{itemize}
+
+    \textbf{Cons}
+    \begin{itemize}
+        \item No journaling
+        \item Not as ubiquitus
+    \end{itemize}
+\end{frame}
+
 
 \begin{frame}{Other Options}
 \end{frame}
@@ -194,6 +229,20 @@
 % \end{frame}
 
 \begin{frame}{ZFS}
+\texttt{ZFS} is file system designed by Sun Microsystems for long-term,
+performant, and reliable data storage.
+
+\textbf{Pros}\begin{itemize}
+    \item Corruption detection and self-healing 
+    \item Integrates well with RAID
+    \item Builtin shapshotting and rollback
+    \item Highly configurable
+\end{itemize}
+
+\textbf{Cons}\begin{itemize}
+    \item Not for day-to-day use
+    \item Main fork is closed source
+\end{itemize}
 \end{frame}
 
 \begin{frame}{TFS}
@@ -224,9 +273,35 @@ Intended as a modern alternative to ZFS, the feature list is mouth-watering.
 \end{frame}
 
 \begin{frame}{NFS}
+    \texttt{NFS} is a common network filesystem protocol for *Nix.
+
+    \textbf{Pros}
+    \begin{itemize}
+        \item Fast
+        \item Mature
+        \item Cross platform
+    \end{itemize}
+
+    \textbf{Cons}
+    \begin{itemize}
+        \item Requires setup on both host and client
+        \item Server is (relatively) complex to setup
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{Samba}
+\texttt{Samba} includes a network filesystem that interpolates between windows
+network drives and *Nix systems. 
+
+\textbf{Pros}
+\begin{itemize}
+    \item Talk to Windows networks without having to use them
+\end{itemize}
+
+\textbf{Cons}
+\begin{itemize}
+    \item Windows
+\end{itemize}
 \end{frame}
 
 \section{Virtual Filesystems}
@@ -244,7 +319,7 @@ Intended as a modern alternative to ZFS, the feature list is mouth-watering.
 
 \begin{frame}{tmpfs}
     \texttt{tmpfs} is a filesystem stored in RAM. It appears as a mounted
-    filesystem, but all data is stored in volitile memory. By default, the
+    filesystem, but all data is stored in volatile memory. By default, the
     \texttt{/tmp} directory is a \texttt{tmpfs}.
 
     \textbf{Pros}

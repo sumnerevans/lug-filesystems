@@ -4,9 +4,9 @@
 - History of Filesystems                (Sumner)
 - Current Filesystems
   - Linux Filesystems
-    - ext4                              (Sam)
+    - ext4                              (Sumner)
   - Windows/macOS Filesystems
-    - NTFS                              (Sam)
+    - NTFS                              (Sumner)
     - HFS, HFS+ & APFS                  (Sumner)
   - Flash Drives
     - FAT32                             (Sam)
