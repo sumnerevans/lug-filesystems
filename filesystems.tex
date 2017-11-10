@@ -107,6 +107,22 @@
 \end{frame}
 
 \begin{frame}{TFS}
+\texttt{TFS} is a work-in-progress filesystem for the Redox operating system.
+Intended as a modern alternative to ZFS, the feature list is mouth-watering.
+
+\textbf{Pros}\begin{itemize}
+    \item Concurrent \& non-blocking
+    \item Lightweight full-disk compression
+    \item Zero-overhead revision history
+    \item Automatic corruption detection
+    \item $O(1)$ recursive directory copies
+    \item Designed for solid state drives
+    \item Perfectly resilient to power loss 
+\end{itemize}
+
+\textbf{Cons}\begin{itemize}
+    \item Not fully implemented yet
+\end{itemize}
 \end{frame}
 
 \section{Network Filesystems}
@@ -139,19 +155,31 @@
 \end{frame}
 
 \begin{frame}{FUSE}
-\begin{itemize}
-    \item Filesystem in Userspace (FUSE) is an interface for creating
-    filesystems without writing any kernel-level code
-    \item Available in Linux, FreeBSD, OpenBSD, NetBSD, OpenSolaris, Minix 3,
-    Android, and macOS
-    \item Access through libfuse for C (bindings exist for Python, Rust, etc.)
+Filesystem in Userspace (FUSE) is an interface for creating filesystems
+without writing any kernel-level code, which makes it incredibly useful for
+creating virtual filesystems. It is an available in Linux, FreeBSD, OpenBSD,
+NetBSD, OpenSolaris, Minix 3, Android, and macOS.
+
+\texttt{libfuse}\ldots \begin{itemize}
+    \item is a C library
+    \item provides a high-level interface for FUSE
+    \item makes creating new filesystems really easy 
+    \item has bindings for Python, Rust, etc.
 \end{itemize}
 \end{frame}
 
 \begin{frame}{sshfs}
-\begin{itemize}
-    \item Implemented using FUSE
-    \item Mount a directory on a remote system through SSH
+\texttt{sshfs} is a network filesystem implemented through libfuse. You can
+use it to mount remote directories via ssh.
+
+\textbf{Pros}\begin{itemize}
+    \item Very easy \& quick to setup (one command)
+    \item Remote machine only needs ssh installed
+\end{itemize}
+
+\textbf{Cons}\begin{itemize}
+    \item Intended to be temporary
+    \item Generally slower than NFS
 \end{itemize}
 \end{frame}
 
