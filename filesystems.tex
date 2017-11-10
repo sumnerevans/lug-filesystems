@@ -161,11 +161,11 @@ Intended as a modern alternative to ZFS, the feature list is mouth-watering.
     \item Automatic corruption detection
     \item $O(1)$ recursive directory copies
     \item Designed for solid state drives
-    \item Perfectly resilient to power loss 
+    \item Perfectly resilient to sudden power loss 
 \end{itemize}
 
 \textbf{Cons}\begin{itemize}
-    \item Not fully implemented yet
+    \item Not implemented yet
 \end{itemize}
 \end{frame}
 
@@ -186,32 +186,32 @@ Intended as a modern alternative to ZFS, the feature list is mouth-watering.
 \section{Virtual Filesystems}
 \begin{frame}{What is a virtual filesystem?}
 \begin{center}
-    A \emph{virtual filesystem} is an abstraction layer which converts some
-    other source of data to a filesytem-like structure.
+    A \emph{virtual filesystem} is an abstraction layer that takes in some other
+    source of data and represents it as a mountable structure of files and
+    directories.
 
-    Colloquially, any filesystem that is not stored on disk is called a virtual
-    filesystem. These can be procedural or abstract other kinds of devices.
+    Colloquially, any filesystem that is associated with a physical disk is
+    called a virtual filesystem. These might still be backed by other kind of
+    storage, or they might be purely procedural.
 \end{center}
 \end{frame}
 
 \begin{frame}{tmpfs}
-    A *Nix \texttt{tmpfs} is a filesystem stored in RAM. They appear as mounted
-    filesystems, but are stored in volitile memory.  By default, the
+    \texttt{tmpfs} is a filesystem stored in RAM. It appears as a mounted
+    filesystem, but all data is stored in volitile memory. By default, the
     \texttt{/tmp} directory is a \texttt{tmpfs}.
 
     \textbf{Pros}
     \begin{itemize}
-        \item Useful for storing temporary files such as downloads and temporary
-            files for programs.
-        \item Saves unnecessary disk I/O.
-        \item Security: you can use it to temporarily store sensitive, decrypted
-            files so that the decrypted data is never written to disk.
+        \item Useful for storing temporary files such as downloads and program files
+        \item Saves unnecessary disk I/O
+        \item Secure storage for decrypted data, since files are never written
+        to disk
     \end{itemize}
 
     \textbf{Cons}
     \begin{itemize}
-        \item Everything in a \texttt{tmpfs} will be deleted on reboot since RAM
-            is volitile.
+        \item Everything in a \texttt{tmpfs} will be ``deleted'' on reboot.
     \end{itemize}
 \end{frame}
 
@@ -234,8 +234,8 @@ NetBSD, OpenSolaris, Minix 3, Android, and macOS.
 \texttt{libfuse}\ldots \begin{itemize}
     \item is a C library
     \item provides a high-level interface for FUSE
-    \item makes creating new filesystems really easy 
-    \item has bindings for Python, Rust, etc.
+    \item makes creating new filesystems really easy
+    \item has bindings for Python, Rust, etc
 \end{itemize}
 \end{frame}
 
@@ -252,11 +252,6 @@ use it to mount remote directories via ssh.
     \item Intended to be temporary
     \item Generally slower than NFS
 \end{itemize}
-\end{frame}
-
-\section{Configuration/maintenance}
-
-\begin{frame}{\ldots}
 \end{frame}
 
 \begin{frame}[standout]
