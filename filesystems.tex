@@ -117,7 +117,42 @@
 
 \section{Flashdrives}
 \begin{frame}{FAT32}
+    \texttt{FAT} is an ancient family of filesystems, going back to floppy disks
+    in 1977. \texttt{FAT32} allows for largish files (up to 4GiB) and storage
+    devices. It is mainly used on portable storage devices such as flash drives.
+
+    \textbf{Pros}
+    \begin{itemize}
+        \item Works anywhere
+        \item Works on anything
+    \end{itemize}
+
+    \textbf{Cons}
+    \begin{itemize}
+        \item Annoying size limitations
+        \item Very inflexible
+    \end{itemize}
 \end{frame}
+
+\begin{frame}{exFAT}
+    \texttt{exFAT} is the latest variation of the \texttt{FAT} family. Although
+    it is far from being fully featured, it is a significant improvement on
+    \texttt{FAT32}.
+
+    \textbf{Pros}
+    \begin{itemize}
+        \item Newer
+        \item Supports larger files size
+        \item Supports larger storage devices
+    \end{itemize}
+
+    \textbf{Cons}
+    \begin{itemize}
+        \item No journaling
+        \item Not as ubiquitus
+    \end{itemize}
+\end{frame}
+
 
 \begin{frame}{Other Options}
 \end{frame}
