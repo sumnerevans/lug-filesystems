@@ -65,28 +65,54 @@
     \end{itemize}
 \end{frame}
 
-\section{History of Filesystems}
-\begin{frame}{The First Filesystems}
-    \splitslide{0.60}{1em}{
-    The filesystem was originally thought of as part of the operating system.
+% \section{History of Filesystems}
+% \begin{frame}{The First Filesystems}
+%     \splitslide{0.60}{1em}{
+%         The filesystem was originally thought of as part of the operating
+%         system.
 
-    One of the first filesystems that had a name was DECTape. DECTape stored an
-    astoundingly small 184 kilobytes (kilo, not mega) of data per tape on the
-    PDP-8.
-    }{\includegraphics[width=0.4\textheight]{./graphics/dectape.jpg}}
-\end{frame}
+%         One of the first filesystems that had a name was DECTape. DECTape stored
+%         an astoundingly small 184 kilobytes (kilo, not mega) of data per tape on
+%         the PDP-8.
+%     }{\includegraphics[width=0.4\textheight]{./graphics/dectape.jpg}}
+% \end{frame}
+
+% \begin{frame}{CM/P $\rightarrow$ FAT}
+
+% \end{frame}
 
 \section{Current Filesystems}
 
 \section{Linux}
-\begin{frame}{ex4}
+\begin{frame}{ext4}
 \end{frame}
 
 \section{Windows \& mac}
 \begin{frame}{NTFS}
 \end{frame}
 
-\begin{frame}{HFS, HFS+ \& APFS}
+\begin{frame}{HFS and HFS+}
+    Apple has made a ton of filesystems with varying degrees of terribleness.
+    \begin{itemize}
+        \item \textbf{HFS:} Hierarchical File System --- Introduced in 1985 with
+            the first Apple computer with a hard drive. Had a limitation of
+            65,535 files and every file had to take up at least 1 / 65,535th of
+            the disk.
+
+        \item \textbf{HFS+:} Released in 1998 to fix some of the issues with
+            HFS. the core of the filesystem uses case-insensitive NFD Unicode
+            strings, which led Linus Torvalds to say that ``HFS+ is probably the
+            worst file-system ever''.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{APFS}
+    \textbf{APFS:} Apple Filesystem --- Introduced in June 2016 to replace HFS+
+    and is optimized for SSDs. It fixes some of the problems of HFS+. Basically
+    it replicates the work of other modern filesystems which are actually
+    maintained by large communities.
+
+    Apple forcibly upgraded all computers to APFS in macOS High Sierra.
 \end{frame}
 
 \section{Flashdrives}
@@ -98,10 +124,28 @@
 
 \section{Alternative Filesystems}
 \begin{frame}{Btrfs}
+    \textbf{B}-\textbf{tr}ee \textbf{f}ile \textbf{s}ystem (Btrfs) pronounced
+    ``Butter FS'' or ``better FS'' or ``b-tree FS'' was developed starting in
+    2007 by Oracle.
+
+    \textbf{Pros}
+    \begin{itemize}
+        \item Copy on Write
+        \item Mostly self-healing
+        \item Can convert from \texttt{etx*} to Btrfs
+    \end{itemize}
+
+    \textbf{Cons}
+    \begin{itemize}
+        \item It's being depricated by Oracle. RHEL 7.4 includes it, but they
+            are transitioning away. The SUSE project will still use and maintain
+            it.
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{XFS}
-\end{frame}
+% \begin{frame}{XFS}
+
+% \end{frame}
 
 \begin{frame}{ZFS}
 \end{frame}
@@ -142,16 +186,43 @@ Intended as a modern alternative to ZFS, the feature list is mouth-watering.
 \section{Virtual Filesystems}
 \begin{frame}{What is a virtual filesystem?}
 \begin{center}
-    There is no reason why a filesystem needs to be backed by a real partition
-    on a real storage device. The exist plenty of \emph{virtual filesystems}
-    that are purely procedural or abstract other kinds of devices.
+    A \emph{virtual filesystem} is an abstraction layer which converts some
+    other source of data to a filesytem-like structure.
+
+    Colloquially, any filesystem that is not stored on disk is called a virtual
+    filesystem. These can be procedural or abstract other kinds of devices.
 \end{center}
 \end{frame}
 
 \begin{frame}{tmpfs}
+    A *Nix \texttt{tmpfs} is a filesystem stored in RAM. They appear as mounted
+    filesystems, but are stored in volitile memory.  By default, the
+    \texttt{/tmp} directory is a \texttt{tmpfs}.
+
+    \textbf{Pros}
+    \begin{itemize}
+        \item Useful for storing temporary files such as downloads and temporary
+            files for programs.
+        \item Saves unnecessary disk I/O.
+        \item Security: you can use it to temporarily store sensitive, decrypted
+            files so that the decrypted data is never written to disk.
+    \end{itemize}
+
+    \textbf{Cons}
+    \begin{itemize}
+        \item Everything in a \texttt{tmpfs} will be deleted on reboot since RAM
+            is volitile.
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{proc filesystem}
+\begin{frame}{procfs}
+    In *Nix, everything is a file. This includes things such as process
+    information. The way to access this data is through the \texttt{proc}
+    filesystem which provides a convenient and standardized method for
+    dynamically accessing process data held in the kernel.
+
+    In Linux, \texttt{procfs} contains more than just process information
+    including memory information, network utilization statistics, etc.
 \end{frame}
 
 \begin{frame}{FUSE}
