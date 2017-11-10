@@ -76,11 +76,11 @@
     }{\includegraphics[width=0.4\textheight]{./graphics/dectape.jpg}}
 \end{frame}
 
-\begin{frame}{CM/P $\rightarrow$ FAT}
-    Gary Kildall invented CM/P, an OS with a portable filesystem.
+\begin{frame}{CP/M $\rightarrow$ FAT}
+    Gary Kildall invented CP/M, an OS with a portable filesystem.
 
     Kildall did not port his system to 16-bits, and Tim Patterson created a
-    clone of CM/P for his new operating system: QDOS. Microsoft bought QDOS from
+    clone of CP/M for his new operating system: QDOS. Microsoft bought QDOS from
     Patterson, and the filesystem was given the name FAT. This first version of
     FAT was called FAT-12 because it used a 12-bit number to count the clusters.
 
@@ -95,7 +95,7 @@
 
 \section{Linux}
 \begin{frame}{ext4}
-    \texttt{etx4} is the successor to \texttt{etx3} and is the default
+    \texttt{ext4} is the successor to \texttt{ext3} and is the default
     filesystem for many Linux distributions.
 
     \textbf{Pros}
@@ -199,10 +199,6 @@
     \end{itemize}
 \end{frame}
 
-
-\begin{frame}{Other Options}
-\end{frame}
-
 \section{Alternative Filesystems}
 \begin{frame}{Btrfs}
     \textbf{B}-\textbf{tr}ee \textbf{f}ile \textbf{s}ystem (Btrfs) pronounced
@@ -213,12 +209,12 @@
     \begin{itemize}
         \item Copy on Write
         \item Mostly self-healing
-        \item Can convert from \texttt{etx*} to Btrfs
+        \item Can convert from \texttt{ext*} to Btrfs
     \end{itemize}
 
     \textbf{Cons}
     \begin{itemize}
-        \item It's being depricated by Oracle. RHEL 7.4 includes it, but they
+        \item It's being deprecated by Oracle. RHEL 7.4 includes it, but they
             are transitioning away. The SUSE project will still use and maintain
             it.
     \end{itemize}
@@ -233,7 +229,7 @@
 performant, and reliable data storage.
 
 \textbf{Pros}\begin{itemize}
-    \item Corruption detection and self-healing 
+    \item Corruption detection and self-healing
     \item Integrates well with RAID
     \item Builtin shapshotting and rollback
     \item Highly configurable
@@ -256,7 +252,7 @@ Intended as a modern alternative to ZFS, the feature list is mouth-watering.
     \item Automatic corruption detection
     \item $O(1)$ recursive directory copies
     \item Designed for solid state drives
-    \item Perfectly resilient to sudden power loss 
+    \item Perfectly resilient to sudden power loss
 \end{itemize}
 
 \textbf{Cons}\begin{itemize}
