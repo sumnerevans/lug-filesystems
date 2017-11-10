@@ -65,30 +65,74 @@
     \end{itemize}
 \end{frame}
 
-% \section{History of Filesystems}
-% \begin{frame}{The First Filesystems}
-%     \splitslide{0.60}{1em}{
-%         The filesystem was originally thought of as part of the operating
-%         system.
+\section{A Few Ancient Filesystems}
+\begin{frame}{The First Filesystems}
+    \splitslide{0.60}{1em}{
+        The filesystem was originally thought of as part of the operating
+        system.
 
-%         One of the first filesystems that had a name was DECTape. DECTape stored
-%         an astoundingly small 184 kilobytes (kilo, not mega) of data per tape on
-%         the PDP-8.
-%     }{\includegraphics[width=0.4\textheight]{./graphics/dectape.jpg}}
-% \end{frame}
+        One of the first filesystems that had a name was DECTape. DECTape stored
+        184 kilobytes (kilo, not mega) of data per tape on the PDP-8.
+    }{\includegraphics[width=0.4\textheight]{./graphics/dectape.jpg}}
+\end{frame}
 
-% \begin{frame}{CM/P $\rightarrow$ FAT}
+\begin{frame}{CM/P $\rightarrow$ FAT}
+    Gary Kildall invented CM/P, an OS with a portable filesystem.
 
-% \end{frame}
+    Kildall did not port his system to 16-bits, and Tim Patterson created a
+    clone of CM/P for his new operating system: QDOS. Microsoft bought QDOS from
+    Patterson, and the filesystem was given the name FAT. This first version of
+    FAT was called FAT-12 because it used a 12-bit number to count the clusters.
+
+    $2^{12} = 4096$ and given that each cluster could be up to 8KB, so FAT-12
+    volumes had a maximum size of 32MB.
+
+    FAT-12 was superseded by FAT-16 and FAT-32. One limitation was that file
+    paths could only be 255 characters long.
+\end{frame}
 
 \section{Current Filesystems}
 
 \section{Linux}
 \begin{frame}{ext4}
+    \texttt{etx4} is the successor to \texttt{etx3} and is the default
+    filesystem for many Linux distributions.
+
+    \textbf{Pros}
+    \begin{itemize}
+        \item It's everywhere. Everyone and their cat use it.
+        \item It can support volumes with sizes up to 1 exbibyte (EiB) and files
+            with sizes up to 16 tebibytes (TiB).
+        \item Backwards compatible with \texttt{ext2} and \texttt{ext3}.
+    \end{itemize}
+
+    \textbf{Cons}
+    \begin{itemize}
+        \item It does not honor the ``secure deletion'' file attribute, which is
+            supposed to cause overwriting of files upon deletion
+        \item It's boring. It's not new and fancy. It's the tried and true file
+            system.
+    \end{itemize}
 \end{frame}
 
-\section{Windows \& mac}
+\section{Windows \& macOS}
 \begin{frame}{NTFS}
+    New Technology File System (\textbf{NTFS}) is the crap that Windows runs on.
+
+    \textbf{Pros}
+    \begin{itemize}
+        \item It works on Windows (not sure if this is a pro or not\ldots)
+    \end{itemize}
+
+    \textbf{Cons}
+    \begin{itemize}
+        \item Filenames are not case sensitive and are limited to 255 UTF-8 code
+            units
+        \item Can resize (post Windows Vista) but cannot move sectors around to
+            do so
+        \item File paths are limited 32,000 characters
+        \item Much less resilient to failure than other filesystems.
+    \end{itemize}
 \end{frame}
 
 \begin{frame}{HFS and HFS+}
@@ -112,7 +156,9 @@
     it replicates the work of other modern filesystems which are actually
     maintained by large communities.
 
-    Apple forcibly upgraded all computers to APFS in macOS High Sierra.
+    Apple forcibly upgraded all computers to APFS in macOS High Sierra. So sorry
+    if your data was corrupted. Let me introduce you to an operating system
+    where you have a choice to change you filesystem or not: Linux.
 \end{frame}
 
 \section{Flashdrives}
@@ -203,10 +249,11 @@ Intended as a modern alternative to ZFS, the feature list is mouth-watering.
 
     \textbf{Pros}
     \begin{itemize}
-        \item Useful for storing temporary files such as downloads and program files
+        \item Useful for storing temporary files such as downloads and program
+            files
         \item Saves unnecessary disk I/O
-        \item Secure storage for decrypted data, since files are never written
-        to disk
+        \item Safe storage for decrypted data, since files are never written to
+            disk
     \end{itemize}
 
     \textbf{Cons}
