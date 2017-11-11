@@ -1,6 +1,7 @@
 Title: Filesystems
 Description: >
-  Everything from NTFS (bleh) to ext4 to zfs.
+  Sumner's and Sam's presentation on filesystems. We talk about everything from
+  NTFS (bleh) to ext4 to zfs to sshfs.
 Date: 2017-11-09
 Thumbnail: graphics/filesystems.png
 Files:
